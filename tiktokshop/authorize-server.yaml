@@ -56,27 +56,38 @@ paths:
                     properties:
                       access_token:
                         type: string
+                        example: ROW_msbfyQAAAAAeb4vVdgdh9LsSb0VCRPeHFrnfePrp8bi_IzAaYpv9vgPKW2Q1iUTH_3-NYqMruZyfhy5I-j85r62xKr6XUC8JfmDNqO-XRTLXd5J6NCFptDbKwxvK3numNfLKsxHRdnTIzyfh9dn8gx6P9a_rUE0qsIjx9VB30rkJOSEa2HFE-ngo9RfDPvvhjOj3xSSrgTtwxRwIL-UM5YG05pPEcbpq4Re512FVejPbkDEwWWCYraeD8EewnojhjOpA2YgGVlO6cfkLT63TqhXRlqtnAAkLhzbF4GfxOXelqp-vlj78Yj_KSFQSVemASRAxJBq0U_LjKmVW_0YWIF9qodrfoK5M3LxAZxXBKby6hVhdUlczGYD38Yecre58BEdLYxfbO_xfbOsS11giADdFrxiJVCztIBTjFxxKSA7GmECBLJUcD6AuIid0x_SG-ELSJ6wU-Id2Rpp1oqOYbES78rHIHXj18apH6ORAGzCJx8CYA-1w-_EY6SpSpYv7vLHzvM3UMjE
                       access_token_expire_in:
                         type: integer
+                        example: 1750326180
                       refresh_token:
                         type: string
+                        example: ROW_H7Iv_AAAAAA2cVHgCzLzf3k1lef_2om81JL5fgeJfIA6SBr_tKMWKEtAlOhKFVrCC66aGKuGdfU
                       refresh_token_expire_in:
                         type: integer
+                        example: 1757495562
                       open_id:
                         type: string
+                        example: 7_qR9gAAAACGdr0JbCFBeZ0z1RUEZYl-6Wv94wV_MMrA4vHE3qzTzw
                       seller_name:
                         type: string
+                        example: SANDBOX7510131124003129144
                       seller_base_region:
                         type: string
+                        example: VN
                       user_type:
                         type: integer
+                        example: 0
                       granted_scopes:
                         type: array
                         items:
                           type: string
+                        example: ["seller.api_testing_tool.02", "QA TEST"]
                   request_id:
                     type: string
         '400':
           description: Bad request (missing/invalid parameters)
         '401':
           description: Unauthorized (invalid app_key/app_secret)
+
+
