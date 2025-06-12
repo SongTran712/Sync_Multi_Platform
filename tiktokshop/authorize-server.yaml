@@ -1,0 +1,82 @@
+openapi: 3.0.1
+info:
+  title: TikTok Shop Auth API
+  version: 1.0.0
+  description: Exchange authorization code for an access token from TikTok Shop.
+servers:
+  - url: https://auth.tiktok-shops.com/api/v2
+paths:
+  /token/get:
+    get:
+      summary: Exchange authorization code for access token
+      description: |
+        Retrieves an access token using an authorization code.
+      parameters:
+        - name: app_key
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 123abcd
+        - name: app_secret
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 15abf8a4972afd1f275d5b19bfa9a17e0d142aa7
+        - name: auth_code
+          in: query
+          required: true
+          schema:
+            type: string
+          example: TTP_FeBoANmHP3yqdoUI9fZOCw
+        - name: grant_type
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [authorized_code]
+          example: authorized_code
+      responses:
+        '200':
+          description: Successful token exchange
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 0
+                  message:
+                    type: string
+                    example: success
+                  data:
+                    type: object
+                    properties:
+                      access_token:
+                        type: string
+                      access_token_expire_in:
+                        type: integer
+                      refresh_token:
+                        type: string
+                      refresh_token_expire_in:
+                        type: integer
+                      open_id:
+                        type: string
+                      seller_name:
+                        type: string
+                      seller_base_region:
+                        type: string
+                      user_type:
+                        type: integer
+                      granted_scopes:
+                        type: array
+                        items:
+                          type: string
+                  request_id:
+                    type: string
+        '400':
+          description: Bad request (missing/invalid parameters)
+        '401':
+          description: Unauthorized (invalid app_key/app_secret)
